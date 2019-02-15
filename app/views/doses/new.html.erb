@@ -1,14 +1,27 @@
-<h1>
-  Add a dose
-</h1>
 
-<p>
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient %>
-    <%= f.button :submit, class: "btn btn-primary" %>
+<div class="container">
+  <h1>
+    Add a dose
+  </h1>
+  <p>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+
+    <% if @cocktail.errors.any?  %>
+    <div class="errors-container">
+      <ul>
+        <% @cocktail.errors.full_messages.each do |message| %>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
-</p>
+  </p>
+
+</div>
+
 
 
 

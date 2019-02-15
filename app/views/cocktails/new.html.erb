@@ -1,15 +1,17 @@
-<%= simple_form_for(@cocktail) do |f|  %>
-  <%= f.input :name %>
-  <%= f.submit "Add the cocktail", class: "btn btn-primary" %>
+<div class="container">
+  <%= simple_form_for(@cocktail) do |f|  %>
+    <%= f.input :name %>
+    <%= f.submit "Add the cocktail", class: "btn btn-primary" %>
 
-<% if @cocktail.errors.any?  %>
-  <div class="errors-container">
-    <ul>
-      <% @cocktail.errors.full_messages.each do |message| %>
+  <% if @cocktail.errors.any?  %>
+    <div class="errors-container">
+      <ul>
+        <% @cocktail.errors.full_messages.each do |message| %>
+        <% end %>
       <% end %>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
 
 
